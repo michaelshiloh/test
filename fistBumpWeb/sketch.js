@@ -74,11 +74,13 @@ function draw() {
 
 
 function mousePressed() {
-    sendMqttMessage('Fistbump!' );
+    sendMqttMessage('1' );
+		localDiv.html('I sent a fistbump!');
 }
 
 function mouseReleased(){
-	sendMqttMessage('No fistbump!');
+	sendMqttMessage('0');
+	localDiv.html('I withdrew my fist');
 }
 
 // called when the client connects
