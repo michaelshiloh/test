@@ -30,7 +30,7 @@ let creds = {
 // For shiftr.io, use whatever word you want for the subtopic
 // unless you have an account on the site. 
 
-let topic = 'monkey';
+let topic = 'fistbump';
 
 // HTML divs for local and remote messages
 let localDiv;
