@@ -118,6 +118,6 @@ function sendMqttMessage(msg) {
         // send it:
         client.send(message);
         // print what you sent:
-        localDiv.html('I sent: ' + message.payloadString);
+        // localDiv.html('I sent: ' + message.payloadString);
     }
 }
