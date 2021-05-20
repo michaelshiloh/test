@@ -86,6 +86,7 @@ function mouseReleased(){
 // called when the client connects
 function onConnect() {
     localDiv.html('client is connected');
+    remoteDiv.html('topic is ' + topic);
     client.subscribe(topic);
 }
 
