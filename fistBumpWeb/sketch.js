@@ -61,25 +61,24 @@ function setup() {
     // create a div for the response:
     remoteDiv = createDiv('waiting for messages');
     remoteDiv.position(20, 80);
+    noStroke();
 }
 
 function draw() {
     background(255);
-    noStroke();
-    // draw a circle when a message is received:
-    fill('#2398CE');
-    // circle moves with the message:
-    circle(xPos, yPos, 30);
+    circle(width/2, height/2, 30);
 }
 
 
 function mousePressed() {
     sendMqttMessage('170' );
+    fill(50);
 		localDiv.html('I sent a fistbump!');
 }
 
 function mouseReleased(){
 	sendMqttMessage('10');
+    fill(200);
 	localDiv.html('I withdrew my fist');
 }
 
@@ -100,12 +99,6 @@ function onConnectionLost(response) {
 // called when a message arrives
 function onMessageArrived(message) {
     remoteDiv.html('I got a message:' + message.payloadString);
-    // assume the message is two numbers, mouseX and mouseY.
-    // Split it into an array:
-    let values = split(message.payloadString, ',');
-    // convert the array values into numbers:
-    xPos = Number(values[0]);
-    yPos = Number(values[1]);
 }
 
 // called when you want to send a message:
