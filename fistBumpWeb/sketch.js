@@ -1,7 +1,3 @@
-*5400
-
-
-
 /*
     p5.js MQTT Client example
     This example uses p5.js: https://p5js.org/
@@ -78,12 +74,12 @@ function draw() {
 
 
 function mousePressed() {
-    sendMqttMessage('1' );
+    sendMqttMessage('170' );
 		localDiv.html('I sent a fistbump!');
 }
 
 function mouseReleased(){
-	sendMqttMessage('0');
+	sendMqttMessage('10');
 	localDiv.html('I withdrew my fist');
 }
 
