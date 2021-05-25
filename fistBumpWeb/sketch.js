@@ -78,12 +78,12 @@ function draw() {
 
 
 function mousePressed() {
-    sendMqttMessage('160' );
+    sendMqttMessage('1' );
 		localDiv.html('I sent a fistbump!');
 }
 
 function mouseReleased(){
-	sendMqttMessage('20');
+	sendMqttMessage('0');
 	localDiv.html('I withdrew my fist');
 }
 
