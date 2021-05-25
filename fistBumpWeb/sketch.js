@@ -55,9 +55,11 @@ let creds = {
 
 let topic = 'fistbump';
 
-// HTML divs for local and remote messages
-let localDiv;
-let remoteDiv;
+// HTML divs for messages
+let localDiv; // local messages
+let remoteDiv; // remote messages
+let statusDiv; // debugging info
+let instructionsDiv; // instructions
 
 function setup() {
 	createCanvas(400, 400);
@@ -75,6 +77,11 @@ function setup() {
 			useSSL: true                // use SSL
 		}
 	);
+
+	// create a div for the instructions
+	instructionsDiv = createDiv('Click anywhere to send a fistbump');
+	instructionsDiv.position(20, 20);
+
 	// create a div for local messages:
 	localDiv = createDiv('local messages will go here');
 	localDiv.position(20, 50);
@@ -82,12 +89,13 @@ function setup() {
 	// create a div for the response:
 	remoteDiv = createDiv('waiting for messages');
 	remoteDiv.position(20, 80);
-	noStroke();
+
+	// create a div for status messages:
+	statusDiv = createDiv('status messages will go here');
+	statusDiv.position(20, 110);
 }
 
 function draw() {
-	background(255);
-	circle(width/2, height/2, 100);
 }
 
 function mousePressed() {
