@@ -126,7 +126,7 @@ function onConnectionLost(response) {
 
 // called when a message arrives
 function onMessageArrived(message) {
-	remoteDiv.html('I got a message:' + message.payloadString);
+	remoteDiv.html('I received a message:' + message.payloadString);
 }
 
 // called when you want to send a message:
@@ -140,6 +140,6 @@ function sendMqttMessage(msg) {
 		// send it:
 		client.send(message);
 		// print what you sent:
-		// localDiv.html('I sent: ' + message.payloadString);
+		// statusDiv.html('I sent: ' + message.payloadString);
 	}
 }
